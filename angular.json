@@ -114,6 +114,57 @@
           }
         }
       }
+    },
+    "virat-backend-app": {
+      "root": "apps/virat-backend-app",
+      "sourceRoot": "apps/virat-backend-app/src",
+      "projectType": "application",
+      "prefix": "virat-backend-app",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/virat-backend-app",
+            "main": "apps/virat-backend-app/src/main.ts",
+            "tsConfig": "apps/virat-backend-app/tsconfig.app.json",
+            "assets": ["apps/virat-backend-app/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/virat-backend-app/src/environments/environment.ts",
+                  "with": "apps/virat-backend-app/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "virat-backend-app:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/virat-backend-app/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/virat-backend-app"],
+          "options": {
+            "jestConfig": "apps/virat-backend-app/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
