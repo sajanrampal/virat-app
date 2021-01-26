@@ -21,6 +21,8 @@
       "tags": [],
       "implicitDependencies": ["virat-frontend-app"]
     },
-    "virat-backend-app": { "tags": [] }
+    "virat-backend-app": { "tags": [] },
+    "models": { "tags": [] },
+    "interface": { "tags": [] }
   }
 }
