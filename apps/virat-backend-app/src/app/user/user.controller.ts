@@ -40,9 +40,12 @@ export class UserController {
 
     @Delete(':id')
     async deleteUser(@Param('id') id){
-        const response = await this.userService.deleteUser(id);
+        const deleteUser = await this.userService.deleteUser(id);
         return {
-            success: response,
+            success: true,
+            payload: {
+                deleteUser,
+            },
         };
     }
 }
