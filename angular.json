@@ -235,5 +235,5 @@
       "style": "scss"
     }
   },
-  "defaultProject": "virat-frontend-app"
+  "defaultProject": "virat-backend-app"
 }
