@@ -22,7 +22,7 @@ import { RouterModule } from '@angular/router';
       redirectTo:'login',
       pathMatch:'full'
     }
-])],
+],{useHash:true})],
   providers: [],
   bootstrap: [AppComponent],
 })
