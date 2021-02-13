@@ -1,22 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
-
+import { TestComponent } from './test/test.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
-  declarations: [AppComponent, DashboardComponent, LoginComponent],
-  imports: [BrowserModule, RouterModule.forRoot([
+  declarations: [AppComponent, TestComponent],
+  imports: [BrowserModule,BrowserAnimationsModule, RouterModule.forRoot([
     {
-    path:'login',
-    component: LoginComponent
+      path: 'login',
+      loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
     },
     {
-      path:'dashboard',
-      component:DashboardComponent,
+      path: 'dashboard',
+      loadChildren: () => import('./dashboard/deshboard.module').then(m => m.DashboardModule)
     },
+   
     {
       path:'',
       redirectTo:'login',

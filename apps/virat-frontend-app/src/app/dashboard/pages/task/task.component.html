@@ -1,0 +1,22 @@
+
+<form class="task-form" [formGroup]="task">
+  <div class="form-group">
+    <!-- <label for="exampleInputEmail1">Task Name</label> -->
+    <input type="email" class="form-control" formControlName="taskName" aria-describedby="emailHelp" placeholder="Enter Task Name">
+    <span class="error-msg" *ngIf="task.get('taskName').touched && task.get('taskName').invalid">* Please enter task name</span>
+  </div>
+  <div class="form-group">
+    <!-- <label for="exampleInputPassword1">Assigned to/Student Id</label> -->
+    <input type="text" class="form-control" formControlName="assigned" placeholder="Assigned to/Student Id">
+    <span class="error-msg" *ngIf="task.get('assigned').touched && task.get('assigned').invalid">* Please enter assigned to/student id</span>
+
+  </div>
+  <div class="form-group form-check">
+    <label for="exampleInputPassword1">Completed</label>
+    <label class="switch">
+      <input type="checkbox" checked formControlName="status">
+      <span class="slider round"></span>
+    </label>
+  </div>
+  <button class="btn btn-primary" (click)="saveTask()" [disabled]="task.invalid">Create Task</button>
+</form>

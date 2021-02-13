@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  apiBase:'https://virat-app.herokuapp.com/api/v1/'
 };
 
 /*

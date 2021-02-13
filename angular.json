@@ -20,7 +20,7 @@
               "apps/virat-frontend-app/src/favicon.ico",
               "apps/virat-frontend-app/src/assets"
             ],
-            "styles": ["apps/virat-frontend-app/src/styles.scss"],
+            "styles": ["apps/virat-frontend-app/src/styles.scss","node_modules/ngx-toastr/toastr.css"],
             "scripts": []
           },
           "configurations": {

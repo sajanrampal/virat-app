@@ -29,7 +29,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^11.0.0",
+    "@angular/animations": "^11.2.0",
     "@angular/common": "^11.0.0",
     "@angular/compiler": "^11.0.0",
     "@angular/core": "^11.0.0",
@@ -44,6 +44,7 @@
     "@nrwl/angular": "11.1.5",
     "bootstrap": "^4.6.0",
     "mongoose": "^5.11.13",
+    "ngx-toastr": "^13.2.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
