@@ -11,6 +11,7 @@ import { AppModule } from './app/app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const globalPrefix = 'api/v1';
+  app.enableCors();
   app.setGlobalPrefix(globalPrefix);
   app.enableCors();
   app.use('/',express.static("ui-app"))
