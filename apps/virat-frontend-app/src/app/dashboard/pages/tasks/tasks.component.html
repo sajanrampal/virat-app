@@ -1,16 +1,31 @@
  <!-- Skeleton screen -->
- <div class="skeleton-screen" *ngFor="let pictureGuide of loading?[1,2,3,4]:[]">
+ <!-- <div class="skeleton-screen" *ngFor="let pictureGuide of loading?[1,2,3,4]:[]">
     <div class="text-line"></div>
-</div>
+</div> -->
+
+
+
+<ul class="list-group">
+  <!-- <li class="list-group-item" *ngFor="let task of tasks.payload.users; let i = index">{{i+1}}---{{task._id}}
+    <button class="btn btn-success" (click)="goToTasks()">Edit</button>
+  </li> -->
+  <li class="skeleton-screen list-group-item" *ngFor="let pictureGuide of loading?[1,2,3,4]:[]">
+    <div class="text-line" style="width: 12%;"></div>
+    <div class="text-line" style="width: 10%"></div>
+    <div class="text-line" style="width: 12%;"></div>
+    <div class="text-line" style="width: 5%;"></div>
+  </li>
+</ul>
+
 <!-- Skeleton screen ends -->
 <ul class="list-group" *ngIf="!loading">
-    <!-- <li class="list-group-item" *ngFor="let task of tasks.payload.users; let i = index">{{i+1}}---{{task._id}}
-      <button class="btn btn-success" (click)="goToTasks()">Edit</button>
-    </li> -->
-    <li class="list-group-item" *ngFor="let task of dammyTasks; let i = index">
+    <li class="list-group-item" *ngFor="let task of tasks.payload.users; let i = index">{{i+1}}---{{task._id}}
+      <button class="btn btn-success" (click)="goToTasks(task)">Edit</button>
+    </li>
+    <!-- <li class="list-group-item" *ngFor="let task of dammyTasks; let i = index">
       <div>Task Name: {{task.taskName}}</div>
       <div>Assigned to/Stduent Id: {{task.assigned}}</div>
       <div>Task Current Status: {{task.status}}</div>
       <button class="btn btn-success" (click)="goToTasks()">Edit</button>
-    </li>
+    </li> -->
   </ul>

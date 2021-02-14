@@ -15,7 +15,7 @@ async function bootstrap() {
   app.setGlobalPrefix(globalPrefix);
   app.enableCors();
   app.use('/',express.static("ui-app"))
-  const port = process.env.PORT || 4500;
+  const port = process.env.PORT || 3300;
   await app.listen(port, () => {
     Logger.log('Listening at http://localhost:' + port + '/' + globalPrefix);
   });

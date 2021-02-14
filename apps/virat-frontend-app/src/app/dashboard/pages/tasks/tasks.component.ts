@@ -47,5 +47,13 @@ export class TasksComponent implements OnInit{
         })
     }
 
+    goToTasks(task){
+        this.router.navigate(['/dashboard', 'task'],  {
+            queryParams: {
+              id: task._id
+            }
+          });
+    }
+
  
 }
