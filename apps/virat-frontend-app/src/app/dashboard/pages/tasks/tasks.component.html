@@ -18,8 +18,13 @@
 </ul>
 
 <!-- Skeleton screen ends -->
+
 <ul class="list-group" *ngIf="!loading">
-    <li class="list-group-item" *ngFor="let task of tasks.payload.users; let i = index">{{i+1}}---{{task._id}}
+  <h2 class="list-group-item">Todo List</h2>
+    <li class="list-group-item" *ngFor="let task of tasks.payload.todos; let i = index">
+      <div><b>Task Name: </b>{{task.taskName}}</div>
+      <div><b>Assigned to/Stduent Id:</b> {{task.assignedTo}}</div>
+      <div><b>Task Current Status: </b><span [ngStyle]="{'color':task.status === 1 ? 'green' : 'red' }">{{task.status === 0 ? 'Pending':'Done'}}</span></div>
       <button class="btn btn-success" (click)="goToTasks(task)">Edit</button>
     </li>
     <!-- <li class="list-group-item" *ngFor="let task of dammyTasks; let i = index">

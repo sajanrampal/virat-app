@@ -7,12 +7,18 @@ import { environment } from 'apps/virat-frontend-app/src/environments/environmen
 export class TaskService {
   constructor(private readonly httpClient: HttpClient) { }
 
-  getTasks(){
-   return this.httpClient.get('https://virat-app.herokuapp.com/api/v1/user')
+  getTask(id):any{
+   return this.httpClient.get(`${environment.apiBase}todos/${id}`)
   }
 
   saveTask(task){
-    return this.httpClient.post(`${environment.apiBase}user`,task)
+    return this.httpClient.post(`${environment.apiBase}todos`,task)
   }
+
+  UpdateTask(task, taskId){
+    return this.httpClient.put(`${environment.apiBase}todos/${taskId}`,task)
+  }
+
+
   
 }
