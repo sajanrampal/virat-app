@@ -1,0 +1,26 @@
+<!-- <virat-app-grid [headers]='headers' [data]='data'></virat-app-grid> -->
+<div *ngIf="isSearchEnable">
+    <input type="text" id="search-box" placeholder="search" (keypress)="searchKeyWord()">
+</div>
+<table>
+    <thead>
+        <tr>
+            <th *ngFor='let header of headers'>
+                {{header.text}}
+            <span *ngIf="header.isSortAble && sortIcon === 'SORT'" (click)="sort(0)">{{sortIcon}}</span>
+            <span *ngIf="header.isSortAble && sortIcon === 'Asa-Sort'" (click)="sort('asa')">{{sortIcon}}</span>
+            <span *ngIf="header.isSortAble && sortIcon === 'Desc-Sort'" (click)="sort('desc')">{{sortIcon}}</span>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let field of data">
+            <td>{{field.id}}</td>
+            <td>{{field.name}}</td>
+            <td>{{field.class}}</td>
+            <td>{{field.section}}</td>
+            <td>{{field.action}}</td>
+            <td>{{field.keyId}}</td>
+        </tr>
+    </tbody>
+</table>

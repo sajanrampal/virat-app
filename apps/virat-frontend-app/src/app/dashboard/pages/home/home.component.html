@@ -1,4 +1,6 @@
 <div style="padding: 2rem;">
-    <button type="button" class="btn btn-primary" (click)="goToTask()">Craete Task</button>
+    <button type="button" class="btn btn-primary" (click)="goToTask()">Craetes Task</button>
     <button type="button" class="btn btn-success" (click)="goToTasks()" style="margin-left: 1rem;">View Tasks</button>
 </div>
+
+<virat-app-grid [headers]='headers' [data]='data' [isSearchEnable]='true' (onSearchCallBack)="searchCallBack($event)" (onSortCallBack)='sortCallBack($event)'></virat-app-grid>
