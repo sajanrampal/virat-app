@@ -211,6 +211,8 @@ __webpack_require__.r(__webpack_exports__);
 class HomeService {
     constructor(httpClient) {
         this.httpClient = httpClient;
+        this.username = 'sajjanrampal';
+        this.password = 'virat@300320';
     }
     getAssignee() {
         const headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]()

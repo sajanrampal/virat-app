@@ -5,6 +5,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'apps/virat-frontend-app/src/environments/environment';
 @Injectable()
 export class HomeService {
+    username= 'sajjanrampal'
+    password= 'virat@300320'
     constructor(private readonly httpClient: HttpClient){}
 
     getAssignee(){

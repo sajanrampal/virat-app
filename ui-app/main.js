@@ -147,7 +147,7 @@ __webpack_require__.r(__webpack_exports__);
 const environment = {
     production: false,
     apiBase: 'https://virat-app.herokuapp.com/api/v1/',
-    gitHubKey: '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',
+    gitHubKey: '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',
     gitHubApiBase: 'https://api.github.com/',
     repoName: 'repos/ProCloudware-Services/Support/'
 };
