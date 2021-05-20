@@ -1,26 +1,36 @@
 <!-- <virat-app-grid [headers]='headers' [data]='data'></virat-app-grid> -->
-<div *ngIf="isSearchEnable">
+<!-- <div *ngIf="isSearchEnable">
     <input type="text" id="search-box" placeholder="search" (keypress)="searchKeyWord()">
-</div>
-<table>
+</div> -->
+<ul class="list-group">
+    <!-- <li class="list-group-item" *ngFor="let task of tasks.payload.users; let i = index">{{i+1}}---{{task._id}}
+      <button class="btn btn-success" (click)="goToTasks()">Edit</button>
+    </li> -->
+    <li class="skeleton-screen list-group-item" *ngFor="let pictureGuide of loading?[1,2,3,4]:[]">
+      <div class="text-line" style="width: 100%;"></div>
+      <div class="text-line" style="width: 95%"></div>
+      <div class="text-line" style="width: 98%;"></div>
+      <div class="text-line" style="width: 92%;"></div>
+    </li>
+  </ul>
+  
+<table style="width: 95%; margin-left: 1rem;">
     <thead>
         <tr>
-            <th *ngFor='let header of headers'>
-                {{header.text}}
-            <span *ngIf="header.isSortAble && sortIcon === 'SORT'" (click)="sort(0)">{{sortIcon}}</span>
-            <span *ngIf="header.isSortAble && sortIcon === 'Asa-Sort'" (click)="sort('asa')">{{sortIcon}}</span>
-            <span *ngIf="header.isSortAble && sortIcon === 'Desc-Sort'" (click)="sort('desc')">{{sortIcon}}</span>
-            </th>
+            <th>SR No.</th>
+            <th>Issue Title</th>
+            <th>Issue URL</th>
+            <!-- <th>Assignee</th> -->
+            <th>Status</th>
+           
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let field of data">
-            <td>{{field.id}}</td>
-            <td>{{field.name}}</td>
-            <td>{{field.class}}</td>
-            <td>{{field.section}}</td>
-            <td>{{field.action}}</td>
-            <td>{{field.keyId}}</td>
+            <td>{{field.srNo}}</td>
+            <td>{{field.issueTitle}}</td>
+            <td (click)="openUrl(field.issueUrl)" style="cursor: pointer;">{{field.issueUrl}}</td>
+            <td>{{field.status}}</td>
         </tr>
     </tbody>
 </table>

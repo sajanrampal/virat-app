@@ -1,6 +1,40 @@
-<div style="padding: 2rem;">
+<!-- <div style="padding: 2rem;">
     <button type="button" class="btn btn-primary" (click)="goToTask()">Craetes Task</button>
     <button type="button" class="btn btn-success" (click)="goToTasks()" style="margin-left: 1rem;">View Tasks</button>
+</div> -->
+
+<div class="row" style="margin-top: 1rem; margin-bottom: 1rem; margin-left: 1rem;">
+    <!-- <div class="col-md-2">
+        <select class="form-control">
+            <option>Assignees</option>
+            <option *ngFor="let assignee of assignees">{{assignee.login}}</option>
+          </select>
+    </div> -->
+
+    <div class="col-md-2">
+        <select class="form-control" (change)="onLabelChange($event)">
+            <option>Labels</option>
+            <option *ngFor="let label of labels">{{label.name}}</option>
+          </select>
+    </div>
+
+    <div class="col-md-2">
+        <select class="form-control" (change)="onIssueStatusChange($event)">
+            <option>Issus Status</option>
+            <option *ngFor="let issuesStatu of issuesStatus">{{issuesStatu.name}}</option>
+          </select>
+    </div>
+
+    <div class="col-md-2">
+        <button type="button" class="btn btn-success" (click)="getIssues()">Get Updated Data</button>
+    </div>
+
+    <div class="col-md-2">
+        <button type="button" class="btn btn-success" (click)="getReport()">Export to CSV</button>
+    </div>
+
+    Total Issues : {{issues.length}}
 </div>
 
-<virat-app-grid [headers]='headers' [data]='data' [isSearchEnable]='true' (onSearchCallBack)="searchCallBack($event)" (onSortCallBack)='sortCallBack($event)'></virat-app-grid>
+
+<virat-app-grid [data]='issues'></virat-app-grid>

@@ -10,48 +10,55 @@ import { GridService } from './grid.service';
 })
 export class GridComponent implements OnInit,OnChanges{
     title: string
-    @Input() headers: [];
+    // @Input() headers: [];
     @Input() data: [];
+    loading = true;
     // eslint-disable-next-line @typescript-eslint/no-inferrable-types
-    @Input() isSearchEnable : boolean = false;
+    // @Input() isSearchEnable : boolean = false;
     // eslint-disable-next-line @angular-eslint/no-output-on-prefix
-    @Output() onSortCallBack = new EventEmitter()
-    @Output() onSearchCallBack = new EventEmitter()
+    // @Output() onSortCallBack = new EventEmitter()
+    // @Output() onSearchCallBack = new EventEmitter()
     
-    sortIcon = 'SORT'
+    // sortIcon = 'SORT'
     ngOnChanges(changes: SimpleChanges): void {
         if (changes) {
-          if (changes['headers'] && changes['headers'].currentValue) {
-            this.headers = changes['headers'].currentValue;
-          } else if (changes['data'] && changes['data'].currentValue) {
+        //   if (changes['headers'] && changes['headers'].currentValue) {
+        //     this.headers = changes['headers'].currentValue;
+        //   } 
+          if (changes['data'] && changes['data'].currentValue) {
             this.data = changes['data'].currentValue;
+            this.loading = false;
           } 
         }
       }
 
     ngOnInit(){
       
-        console.log(this.headers)
+        // console.log(this.headers)
         console.log(this.data)
     }
 
-    sort(type){
-      if(type === 0){
-        this.sortIcon = 'Asa-Sort';
-        this.onSortCallBack.emit(type);
-      }else if(type === 'asa'){
-        this.sortIcon = 'Desc-Sort';
-        this.onSortCallBack.emit(type);
-      }else{
-        this.sortIcon = 'SORT';
-        this.onSortCallBack.emit(type);
-      }
+    openUrl(url){
+        window.open(url,'_blank' )
     }
 
+    // sort(type){
+    //   if(type === 0){
+    //     this.sortIcon = 'Asa-Sort';
+    //     this.onSortCallBack.emit(type);
+    //   }else if(type === 'asa'){
+    //     this.sortIcon = 'Desc-Sort';
+    //     this.onSortCallBack.emit(type);
+    //   }else{
+    //     this.sortIcon = 'SORT';
+    //     this.onSortCallBack.emit(type);
+    //   }
+    // }
+
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    searchKeyWord(){
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const searchBox = document.getElementById('search-box') as HTMLInputElement;
-      this.onSearchCallBack.emit(searchBox.value);
-    }
+    // searchKeyWord(){
+    //   // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    //   const searchBox = document.getElementById('search-box') as HTMLInputElement;
+    //   this.onSearchCallBack.emit(searchBox.value);
+    // }
 }

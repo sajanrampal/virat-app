@@ -4,7 +4,10 @@
 
 export const environment = {
   production: false,
-  apiBase:'https://virat-app.herokuapp.com/api/v1/'
+  apiBase:'https://virat-app.herokuapp.com/api/v1/',
+  gitHubKey: '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',
+  gitHubApiBase: 'https://api.github.com/',
+  repoName:'repos/ProCloudware-Services/Support/'
 };
 
 /*
